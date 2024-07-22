@@ -11,35 +11,32 @@ image:
   tag: "2019-latest"
 
 ACCEPT_EULA:
-    value: "y"
+  value: "y"
 MSSQL_PID:
-    value: "Developer"
+  value: "Developer"
 MSSQL_AGENT_ENABLED:
-    value: "true"
+  value: "true"
 hostname: mssqllatest
 sa_password: "Toughpass1!"
 containers:
   ports:
-      containerPort: 1433
+    containerPort: 1433
 
 podAnnotations: {}
 
 podSecurityContext:
-   fsGroup: 10001
+  fsGroup: 10001
 
 service:
   type: LoadBalancer
   port: 1433
 
 pvc:
- StorageClass: "azure-disk"
- userdbaccessMode: ReadWriteOnce
- userdbsize: 5Gi
- userlogaccessMode: ReadWriteOnce
- userlogsize: 5Gi
- tempdbaccessMode: ReadWriteOnce
- tempsize: 2Gi
- mssqldataaccessMode: ReadWriteOnce
- mssqldbsize: 2Gi
-
-
+  userdbaccessMode: ReadWriteOnce
+  userdbsize: 5Gi
+  userlogaccessMode: ReadWriteOnce
+  userlogsize: 1Gi
+  tempdbaccessMode: ReadWriteOnce
+  tempsize: 1Gi
+  mssqldataaccessMode: ReadWriteOnce
+  mssqldbsize: 2Gi
